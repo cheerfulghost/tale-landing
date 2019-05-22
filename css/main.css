@@ -1,0 +1,378 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'vga8';
+    src: url("../fonts/vga8.ttf"); }
+/* Styles that all themes will use */
+body, html {
+    margin: 0;
+    min-height: 100vh;
+    background: #271645;
+    font-family: "vga8", monospace;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased; }
+
+input[type="text"] {
+    font-family: "vga8", monospace;
+    font-size: 24px;
+    color: white;
+    border: 2px solid #00E5E5;
+    background: #00E5E5 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQImWP4//+/1P///6UYYABDAKcETAAAU50YuXjMBDcAAAAASUVORK5CYII=) repeat;
+    padding: 0 .5em; }
+
+button, .game a.button {
+    display: inline-block;
+    margin: .5em 0 1em 0;
+    border-radius: 0;
+    padding: .15em .75em;
+    font-family: "vga8", monospace;
+    border: 2px solid #FF1874;
+    color: #271645;
+    background-color: #FF1874;
+    font-size: 24px;
+    -webkit-box-shadow: 8px 8px 0 0 #811F8F;
+    /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 8px 8px 0 0 #811F8F;
+    /* Firefox 3.5 - 3.6 */
+    box-shadow: 8px 8px 0 0 #811F8F;
+    /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    cursor: pointer; }
+
+button:hover, button:active, .game a.button:hover, .game a.button:active {
+    color: #FF1874;
+    background-color: #271645; }
+
+button:before, .game a.button:before {
+    content: "< "; }
+
+button:after, .game a.button:after {
+    content: " >"; }
+
+.game a.logout {
+    background-color: #A80000;
+    border-color: #A80000;
+    -webkit-box-shadow: 8px 8px 0 0 #612529;
+    /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 8px 8px 0 0 #612529;
+    /* Firefox 3.5 - 3.6 */
+    box-shadow: 8px 8px 0 0 #612529;
+    /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */ }
+
+.game a.logout:hover, .game a.logout:active {
+    color: #A80000; }
+
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: 4px double;
+    margin-bottom: 0; }
+
+h1 .title {
+    color: white; }
+
+h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 0;
+    border-bottom: 1px solid white;
+    color: white; }
+
+h3 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 0;
+    color: white; }
+
+h3:before {
+    content: "<< "; }
+
+h3:after {
+    content: " >>"; }
+
+strong {
+    font-weight: normal;
+    color: white; }
+
+p {
+    margin-top: .5em; }
+
+.background {
+    padding: 1em; }
+
+.errors-box {
+    margin: 0;
+    padding: 0; }
+
+.errors-inner {
+    background-color: #A80000;
+    color: white;
+    display: inline-block;
+    padding: .5em;
+    border: 8px solid #A80000;
+    box-shadow: 0 0 0 2px white inset; }
+
+.errors-list {
+    list-style-type: square;
+    margin: .5em 0; }
+
+.not-logged-in {
+    margin-top: 1em; }
+
+.actionList {
+    list-style-type: none;
+    padding-left: 1em; }
+
+.actionList li {
+    margin-bottom: .25em; }
+
+.columns {
+    max-width: 50em;
+    -webkit-column-count: 2;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 2;
+    /* Firefox */
+    column-count: 2;
+    -webkit-column-width: 15em;
+    /* Chrome, Safari, Opera */
+    -moz-column-width: 15em;
+    /* Firefox */
+    column-width: 15em; }
+
+.columns li {
+    display: block; }
+
+select {
+    font-family: "vga8", monospace, monospace;
+    font-size: 24px;
+    display: inline-block;
+    color: #00E5E5;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 10px;
+    transition: border 0.3s;
+    /*min-width: 15em;*/
+    border: solid 2px #00E5E5;
+    outline: none;
+    padding: 0 2em 0 .5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #00E5E5 50%), linear-gradient(135deg, #00E5E5 50%, transparent 50%);
+    background-position: calc(100% - 20px) 0.5em, calc(100% - 12px) 0.5em;
+    background-size: 8px 8px, 8px 8px;
+    background-repeat: no-repeat;
+    background-color: transparent; }
+
+select:focus {
+    background-color: #00E5E5;
+    color: black;
+    background-image: linear-gradient(45deg, transparent 50%, black 50%), linear-gradient(135deg, black 50%, transparent 50%); }
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #00E5E5; }
+
+select:focus:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 black; }
+
+option:not(:checked) {
+    color: black;
+    background-color: white;
+    text-shadow: none; }
+
+/* IE 10-11 Hackery */
+select::-ms-expand {
+    display: none; }
+
+::selection {
+    /* WebKit/Blink Browsers */
+    background: #00E5E5;
+    color: black; }
+
+::-moz-selection {
+    /* Gecko Browsers */
+    background: #00E5E5;
+    color: black; }
+
+/* IE 9 Hackery */
+@media screen and (min-width: 0\0 ) {
+    select {
+        background: none\9;
+        padding: 5px\9; } }
+.heading {
+    margin: 0;
+    padding: 0; }
+
+.heading h1, .heading h2 {
+    display: inline-block; }
+
+.radio-unit {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: .25em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+
+.radio-unit.muted {
+    cursor: text; }
+
+.radio-unit input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+
+.radio-selection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FF1874; }
+
+.radio-space {
+    display: inline; }
+
+.radio-x {
+    display: none; }
+
+.radio-unit input:checked ~ .radio-selection .radio-x {
+    display: inline; }
+
+.radio-unit input:checked ~ .radio-selection .radio-space {
+    display: none; }
+
+.radio-selection:hover {
+    color: #271645;
+    background-color: #00E5E5; }
+
+.shop-cant {
+    color: #A80000; }
+
+.game {
+    font-size: 24px;
+    color: #00E5E5;
+    letter-spacing: .05em; }
+
+.game a {
+    color: #00E5E5;
+    text-decoration: underline;
+    margin-right: .25em; }
+
+.game a:hover, .game a:active {
+    color: #271645;
+    background: #00E5E5; }
+
+.actionLetter {
+    color: #FF1874; }
+
+.accent {
+    color: white; }
+
+.accent a {
+    color: white; }
+
+.damage-player {
+    color: #FF1874; }
+
+.damage-enemy {
+    color: #A80000; }
+
+.gold {
+    color: gold; }
+
+.muted {
+    color: #008787; }
+
+.conversation-controls {
+    margin-top: 1em; }
+
+.conversation-entry {
+    margin-top: .5em; }
+
+table {
+    border-collapse: collapse; }
+
+table tr td:first-child {
+    padding-right: 3em; }
+
+table td {
+    border: 2px solid;
+    padding: .35em; }
+
+.main-left {
+    width: calc(100% - 425px);
+    display: inline-block;
+    vertical-align: top; }
+
+.main-right {
+    width: 375px;
+    display: inline-block; }
+
+.inner-pre {
+    font-family: "vga8", monospace; }
+
+.current-game {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    background-color: #566e76;
+    color: white;
+    padding: .25em; }
+
+.current-game-inner {
+    border: 2px solid #271645;
+    padding: .5em; }
+
+.current-game:last-child {
+    margin-bottom: 0; }
+
+.top-margin {
+    margin-top: .5em; }
+
+@media screen and (max-width: 768px) {
+    table.collapse-rows td {
+        display: table-row;
+        border: none; }
+
+    .actionList li {
+        margin-bottom: .5em; } }
+@media screen and (max-width: 1280px) {
+    .main-left {
+        width: auto; }
+
+    .main-right {
+        display: none; }
+
+    .collapse-full table, .collapse-full thead, .collapse-full tbody, .collapse-full th, .collapse-full td, .collapse-full tr {
+        display: block; }
+    .collapse-full thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; }
+    .collapse-full tr {
+        margin-top: 2em; }
+    .collapse-full tr:first-child {
+        margin-top: 0; }
+    .collapse-full td {
+        position: relative;
+        padding-left: 200px;
+        border-bottom: 0; }
+    .collapse-full td:last-child {
+        border-bottom: 2px solid;
+        padding-left: .25em; }
+    .collapse-full td:before {
+        position: absolute;
+        top: 12px;
+        left: 6px;
+        width: 200px;
+        padding-right: 40px;
+        white-space: nowrap; }
+    .collapse-full td:nth-of-type(1):before {
+        content: "Player"; }
+    .collapse-full td:nth-of-type(2):before {
+        content: "Experience"; }
+    .collapse-full td:nth-of-type(3):before {
+        content: "Level"; } }
