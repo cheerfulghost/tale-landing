@@ -23,7 +23,8 @@ $(document).ready(function() {
         }
     });
 
-    $("#hype").click(function(){
+    $("#hype").click(function(e){
+        e.preventDefault();
        showHype();
     });
 });
