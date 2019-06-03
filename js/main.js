@@ -1,4 +1,11 @@
-var enemies = ["Cyril the Cynic", "Balda the Bored", "Narcissa the Naysayer", "Some Internet Trolls"];
+var enemies = [
+  "Cyril the Cynic",
+  "Balda the Bored",
+  "Narcissa the Naysayer",
+  "Some Internet Trolls",
+  "Fear Itself",
+  "Feelings of Doom"
+];
 var hypeCount = 0;
 
 $(document).ready(function() {
@@ -37,13 +44,17 @@ function showHype() {
     let thisEnemy = enemies[thisEnemyNum];
     let hypeDescription = '';
     hypeCount += hype;
-    if (hypeCount < 100) {
+    console.log(hypeCount);
+    if (hypeCount < 150) {
         hypeDescription = "You are a little hyped. Keep it up!";
-    } else if (hypeCount < 250) {
+    } else if (hypeCount < 500) {
         hypeDescription = "You are moderately hyped, but you could do better!";
-    } else {
-        hypeDescription = "You have achieved <span class='gold'>MAXIMUM HYPE!</span> Stay tuned for more info!";
+    } else if (hypeCount < 1000) {
+        hypeDescription = "You have achieved <span class='gold'>MAXIMUM HYPE!</span>";
+    } else if (hypeCount < 1500) {
+      hypeDescription = "Apparently you are the most hyped of the <span class='gold'>MAXIMUM HYPED!</span> Stay tuned for more information and keep your clicking fingers ready!";
     }
+
     $("#hype-gold").text(gold + " gold");
     $("#hype-exp").text(hype + " hype!");
     $("#damage").text(damage);
