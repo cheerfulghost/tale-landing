@@ -7,6 +7,7 @@ var enemies = [
   "Feelings of Doom"
 ];
 var hypeCount = 0;
+var goldCount = 0;
 
 $(document).ready(function() {
     // handle hotkey support
@@ -44,7 +45,7 @@ function showHype() {
     let thisEnemy = enemies[thisEnemyNum];
     let hypeDescription = '';
     hypeCount += hype;
-    console.log(hypeCount);
+    goldCount += gold;
     if (hypeCount < 150) {
         hypeDescription = "You are a little hyped. Keep it up!";
     } else if (hypeCount < 500) {
@@ -53,6 +54,8 @@ function showHype() {
         hypeDescription = "You have achieved <span class='gold'>MAXIMUM HYPE!</span>";
     } else if (hypeCount < 1500) {
       hypeDescription = "Apparently you are the most hyped of the <span class='gold'>MAXIMUM HYPED!</span> Stay tuned for more information and keep your clicking fingers ready!";
+    } else {
+      hypeDescription = "Total Hype: <span class='accent'>"+hypeCount+"</span> Total Gold: <span class='gold'>"+goldCount+"</span>";
     }
 
     $("#hype-gold").text(gold + " gold");
